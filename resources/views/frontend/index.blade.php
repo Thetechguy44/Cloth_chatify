@@ -14,23 +14,17 @@
                 
                     <ul class="menu__box">
                             <li><a class="menu__item home" href="#">Home</a></li>
-                            <li><a class="menu__item" href="#">Store</a></li>
-                            <li><a class="menu__item" href="#">New Arrivals</a></li>
-                            <li><a class="menu__item" href="#">LOOKBOOKS</a></li>
                     </ul>
                 </div>
-                <div class="logo">
-                    <!--the logo goes here-->
-                    <img class="logo_img" src="{{asset('')}}asset/img/outerspace_logo.png" alt="">
-                </div>
+                <!-- <div class="logo">
+                    <img class="logo_img" src="{{asset('asset/img/outerspace_logo.png')}}" alt="">
+                </div> -->
         
-                <div class="nav icons">
-                    <!--navigation icons go here-->
-                    <a href="#"><i class="fa-regular fa-user"></i></a><!-- User Icon -->
-                    <a href="#"> <i class="fas fa-shopping-cart"></i></a> <!-- Cart Icon -->
-                    <a href="#"> <i class="fas fa-search"></i></a> <!-- Search Icon -->
-                </div>
-        
+                <!-- <div class="nav icons">
+                    <a href="#"><i class="fa-regular fa-user"></i></a>
+                    <a href="#"> <i class="fas fa-shopping-cart"></i></a> 
+                    <a href="#"> <i class="fas fa-search"></i></a>
+                </div> -->
             </div>
             <!--hero image goes here-->
             
@@ -50,7 +44,10 @@
                 <img class="overlay_image" src="{{asset('dist/img/products/sample/'.$product->sample_image)}}" alt="">
                 <div class="prod_details">
                     <h4>{{$product->name}}</h4>
-                    <p class="price">${{$product->price}}</p>
+                    <p class="price">
+                        <Span class="prod_price">${{$product->price}}</Span>
+                        <Span><a class="buy" href="#"><b>Buy me</b></a></Span>
+                    </p>
                 </div>
             </div>
             @endforeach
@@ -58,30 +55,40 @@
     </div>
 
 
-
     <div class="slider_div">
-        <div class="slider_1">
+     @foreach ($banners as $banner)
+        <div class="second_slide slider_1">
+            <h5 class="slider_text">{{$banner->title}}</h5>
 
-            <h5 class="slider_text">Summer</h5>
-
-           <h1 class="slider_text">UNTITLED</h1>
+           <h1 class="slider_text">{{$banner->title}}</h1>
            <P class="slider_text">
-            Untitled is a high-quality, 
-            stylish fabric made from a blend of natural and synthetic fibers, 
-            which gives it a soft and luxurious feel.
+           {{$banner->description}}
            </P>
 
            <button class="shop_now" >
             SHOP NOW 
            </button>
         </div>
+     @endforeach
 
-        <div class="slider_2">
-            <!--<img class="slider_img" src="./asset/img/slider2.jpeg" alt="">-->  
-        </div>
-  </div>
+        <section class="container">
+            <div class="slider-wrapper">
+                <div class="slider">
+                @foreach ($banners as $banner)
+                    <img class="slide_img"  src="{{asset('dist/img/banners/'.$banner->image)}}" width="100" alt="" />
+                @endforeach
+                </div>
+                <!-- <div class="slider-nav">
+                    <a href="#slide-1"></a>
+                    <a href="#slide-2"></a>
+                    <a href="#slide-3"></a>
+                    <a href="#slide-4"></a>
+                </div> -->
+            </div>
+        </section>
+    </div>
 
-    <div class="gallery">
+    <!-- <div class="gallery">
         <div class="promo-container">
             <div class="promo">
                 <a href="#"><p>PROMOTIONS</p></a>
@@ -90,11 +97,17 @@
                 <a href="#"><p>NEW ARRIVALS</p></a>
             </div>
         </div>
+    </div> -->
+    <div>
+    <br><br><br>
     </div>
 
     <div class="gallery-container">
         <div class="gallery-section full-width" id="gallery1_div">
             <img class="gallery-image" id="gallery1" src="{{asset('asset/img/gallery1.jpg')}}" alt="">
+        </div>
+        <div>
+             <br><br><br>
         </div>
         <div class="gallery-section">
             <img class="gallery-image" src="{{asset('asset/img/gallery2.jpg')}}" alt="">
@@ -174,7 +187,7 @@
             </div>
 
         </div>
-            <div class="mail_list">
+            <!-- <div class="mail_list">
                 <h1>
                     GET 10% OFF
                 </h1>
@@ -195,7 +208,101 @@
                     <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
                     <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
                 </div>
-            </div>
+            </div> -->
     </div> 
+    <div class="footer">
+        <div class=" footer_div location">
+            <p>
+                <i class="fas fa-map-marker"></i>
+                Ostro Tower, E14 9ZP
+                <br>
+                United Kingdom
+            </p>
+
+            <div class="footer_social_container">
+                
+                <a href="#"><i class="fab fa-facebook "></i></a>
+                <a href="#"><i class="fab fa-instagram "></i></a>
+            </div>
+            <p>
+                Yes, we ship to Worldwide
+            </p>
+
+        </div>
+        <div class="footer_div contact">
+            <p class=" ">
+                admin@outterspaceluxury.com
+                <br>
+                +2349090386641
+            </p>
+        </div>
+        <div class="footer_div category">
+            <h4>
+                SHOP
+            </h4>
+            
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Hats</a></li>
+                <li><a href="#">T-Shirts</a></li>
+                <li><a href="#">Shorts</a></li>
+                <li><a href="#">Women</a></li>
+            
+        </div>
+        <!-- <div class="footer_div help">
+            <h4>
+                HELP
+            </h4>
+            
+                <li><a href="#">Refund and Returns Policy</a></li>
+                <li><a href="#">Hats</a></li>
+                <li><a href="#">T-Shirts</a></li>
+            
+        </div>
+        <div class="footer_div about">
+            <h4>
+                ABOUT
+            </h4>
+            
+                <li><a href="#">Our Story</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">My account</a></li>
+            
+
+        </div> -->
+    </div>
+
+    <div class="payments">
+        <hr>
+        
+        <p>
+            © Outterspace Luxury 2023. All rights reserved.
+        </p>
+        <!-- <h5>
+            Secure Payments
+        </h5> -->
+
+        <!-- <div class="payment_container">
+                
+
+            <div class="visa">
+                <img src="img/visa-pay-logo.svg" alt="">
+            </div>
+            <div class="paypal">
+                <img src="img/paypal-logo.svg" alt="">
+            </div>
+            <div class="mastercard">
+                <img src="img/master-card-logo.svg" alt="">
+            </div>
+            <div class="gpay">
+                <img src="img/gpay-logo.svg" alt="">
+            </div>
+            <div class="applepay">
+                <img src="img/applepay.svg" alt="">
+            </div>
+            <div class="amex">
+                <img src="img/american-express-logo.svg" alt="">
+            </div>
+        </div> -->
+    </div>
 </div>
 @endsection

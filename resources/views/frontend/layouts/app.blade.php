@@ -17,4 +17,5 @@
 <body>
    @yield('content')
 </body>
+<script src="{{asset('asset/js/script.js')}}" crossorigin="anonymous"></script>
 </html>

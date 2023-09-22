@@ -1,13 +1,13 @@
 <!-- menu -->
 <div class="menu">
-    <div class="menu-header">
+    <!-- <div class="menu-header">
         <a href="{{url('/home')}}" class="menu-header-logo">
             <img src="https://vetra.laborasyon.com/assets/images/logo.svg" alt="logo">
         </a>
         <a href="{{url('/home')}}" class="btn btn-sm menu-close-btn">
             <i class="bi bi-x"></i>
         </a>
-    </div>
+    </div> -->
     <div class="menu-body">
         <div class="dropdown">
             <a href="#" class="d-flex align-items-center" data-bs-toggle="dropdown">
