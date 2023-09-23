@@ -235,8 +235,7 @@ h3 {
 }
 
 .slider_1 {
-  
-  margin-left: 60px;
+  margin-left: 30px;
   width: 45%; /* 45% width for the first div */
   padding: 20px; /* Add padding for content spacing */
   box-sizing: border-box; /* Include padding in the width calculation */
@@ -331,6 +330,7 @@ h3 {
 .slider {
   height: 450px;
 	display: flex;
+  max-width: 100%;
 	overflow-x: auto;
 	scroll-snap-type: x mandatory;
 	scroll-behavior: smooth;
